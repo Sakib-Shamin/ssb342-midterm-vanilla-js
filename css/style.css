@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+:root
+{
+    --primary-color: #0D98BA;
+    --text-color: #555;
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2
+{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+a, a:hover
+{
+    text-decoration: none;
+}
+
+a
+{
+    color: inherit;
+    display: inline-block;
+}
+
+.ssc-ru-current-page, #sscRUPagination a:hover
+{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.ssc-ru-container, #sscRUCardsContainer, .ssc-ru-single-card, #sscRUPagination ul, #sscRUPagination a
+{
+    display: flex;
+}
+
+.ssc-ru-container, .ssc-ru-single-card, #sscRUPagination ul, #sscRUPagination a
+{
+    justify-content: center;
+    align-items: center;
+}
+
+#sscRUCardsContainer, .ssc-ru-single-card
+{
+    flex-wrap: wrap;
+}
+
+.ssc-skeleton
+{
+    animation: ssc-skeleton-loading 1s linear infinite alternate;
+}
+
+.ssc-ru-single-card > .ssc-skeleton
+{
+    width: 100%;
+    height: 22px;
+    border-radius: 25px;
+}
+
+.ssc-ru-user-avatar.ssc-skeleton, .ssc-ru-single-card img, .ssc-ru-user-avatar, .ssc-ru-current-page, #sscRUPagination a
+{
+    border-radius: 50%;
+}
+
+.ssc-ru-single-card, #sscRUResults, #sscRUPagination a
+{
+    transition-duration: 300ms;
+}
+
+.ssc-ru-user-avatar.ssc-skeleton
+{
+    width: 72px;
+    height: 72px;
+}
+
+.ssc-ru-container
+{
+    width: 100%;
+}
+
+.ssc-ru-main
+{
+    width: 768px;
+}
+
+.ssc-ru-main > div, #sscRUPagination
+{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#sscRUSearchbar
+{
+    width: 100%;
+    border: transparent;
+    box-shadow: 0 0 0 1px #ccc;
+    display: inline-block;
+    padding: 10px; 
+    border-radius: 1rem;
+    outline: none;
+}
+
+#sscRUResults
+{
+    transition-property: height;
+}
+
+.ssc-ru-single-card
+{
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #eee;
+    padding: 10px;
+    transition-property: transform, box-shadow;
+    cursor: pointer;
+    flex: 0 0 25%;
+    max-width: 25%;
+    flex-direction: column;
+}
+
+.ssc-ru-single-card:hover
+{
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 20%);
+    transform: scale(1.1);
+}
+
+.ssc-ru-single-card > *
+{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#sscRUPagination ul
+{
+    list-style-type: none;
+}
+
+#sscRUPagination a
+{
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    transition-property: background, color;
+}
+
+@keyframes ssc-skeleton-loading 
+{
+    0%
+    {
+        background-color: hsl(180, 10%, 70%);
+    }
+
+    100%
+    {
+        background-color: hsl(180, 10%, 95%);
+    }
+}
